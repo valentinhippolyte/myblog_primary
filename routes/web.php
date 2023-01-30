@@ -21,5 +21,7 @@ Route::get('/', function () {
 
 
 Route::resource('/users', UserController::class);
-Route::resource('/articles', ArticleController::class);
+Route::get('/articles', [ArticleController::class, 'index'])->name('articles');
+Route::get('/articles/{slug}', [ArticleController::class, 'show'])->name('article');
+
 

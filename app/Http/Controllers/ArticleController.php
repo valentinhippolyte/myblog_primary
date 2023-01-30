@@ -46,9 +46,13 @@ class ArticleController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($slug)
     {
-        //
+        $article = Article::where('slug', $slug)->FirstOrFail();
+        return view('article', [
+            'article' => $article
+        ]);
+
     }
 
     /**
