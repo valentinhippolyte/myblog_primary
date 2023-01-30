@@ -1,14 +1,13 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Blog</a>
+    <a class="navbar-brand" href="{{ route('home') }}">Blog</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
-        <a class="nav-link active" aria-current="page" href="#">Home</a>
-        <a class="nav-link" href="#">Articles</a>
-        <a class="nav-link" href="#">Users</a>
+        <a class="nav-link" href="{{ route('articles') }}">Articles</a>
+        <a class="nav-link" href="{{ route('users') }}">Users</a>
       </div>
     </div>
   </div>
