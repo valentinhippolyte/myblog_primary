@@ -18,4 +18,7 @@
         @endforeach
     </tbody>
     </table>
+    <div class="d-flex justify-content-center mt-5">
+        {{ $users->links('vendor.pagination.custom') }}
+    </div>
 @endsection
