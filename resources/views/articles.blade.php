@@ -1,6 +1,13 @@
 @extends('base')
 @section('content')
     <h1 class="display-3 text-center">Articles</h1>
+
+    @if(session()->get('success'))
+    <div class="alert alert-success">
+      {{ session()->get('success') }}  
+    </div><br />
+    @endif
+
     <div class="articles row justify-content-center">
         @foreach($articles as $article)
         <div class="col-md-6">

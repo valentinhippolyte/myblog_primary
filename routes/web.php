@@ -1,8 +1,8 @@
 <?php
 
-use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ArticleController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,5 +23,6 @@ Route::get('/', function () {
 Route::get('/users', [UserController::class, 'index'])->name('users');
 Route::get('/articles', [ArticleController::class, 'index'])->name('articles');
 Route::get('/articles/{slug}', [ArticleController::class, 'show'])->name('article');
-
+Route::get('/articles/test/create', [ArticleController::class, 'create'])->name('create');
+Route::get('/articles/test/create/store', [ArticleController::class, 'store'])->name('articlestore');
 
