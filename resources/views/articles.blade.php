@@ -19,6 +19,9 @@
                         <a href="{{ route('article', $article->slug) }}" class="btn btn-dark">Read more
                             <i class="fas fa-arrow-right"></i>
                         </a>
+                        <a href="{{ route('article-edit', $article->id) }}" class="btn btn-blue">Edit
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
                     </div>
                 </div>
             </div>

@@ -23,7 +23,7 @@
         </div><br />
         @endif
 
-        <form action="{{ route('articlestore') }}">
+        <form action="{{ route('article-store') }}">
             . @csrf
             @method("POST")
             <div class="form-group">

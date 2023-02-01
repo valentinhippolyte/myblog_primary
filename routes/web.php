@@ -21,8 +21,10 @@ Route::get('/', function () {
 
 
 Route::get('/users', [UserController::class, 'index'])->name('users');
+
 Route::get('/articles', [ArticleController::class, 'index'])->name('articles');
 Route::get('/articles/{slug}', [ArticleController::class, 'show'])->name('article');
-Route::get('/articles/test/create', [ArticleController::class, 'create'])->name('create');
-Route::get('/articles/test/create/store', [ArticleController::class, 'store'])->name('articlestore');
-
+Route::get('/articles/admin/create', [ArticleController::class, 'create'])->name('article-create');
+Route::get('/articles/admin/create/store', [ArticleController::class, 'store'])->name('article-store');
+Route::get('/articles/admin/edit/{id}', [ArticleController::class, 'edit'])->name('article-edit');
+Route::get('/articles/admin/edit/{id}/done', [ArticleController::class, 'update'])->name('article-update');

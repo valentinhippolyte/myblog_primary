@@ -39,19 +39,19 @@ class ArticleController extends Controller
      */
     public function store(Request $request)
     {
-        $validatedData = $request->validate([
+        $request->validate([
             'title' => 'required|max:255',
             'subtitle' => 'required|max:255',
             'content' => 'required',
         ]);
         
-
         $article = new Article();
 
         $article->title = $request->get('title');
         $article->subtitle = $request->get('subtitle');
         $article->slug = Str::slug($article->title, '-');
         $article->content = $request->get('content');
+        
         $article->save();
 
         return redirect('/articles')->with('success', 'Article created successfully');
@@ -80,7 +80,11 @@ class ArticleController extends Controller
      */
     public function edit($id)
     {
-        //
+        $article = Article::findOrFail($id);
+
+        return view('edit', [
+            'article' => $article
+        ]);
     }
 
     /**
@@ -92,7 +96,22 @@ class ArticleController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'title' => 'required|max:255',
+            'subtitle' => 'required|max:255',
+            'content' => 'required',
+        ]);
+
+        $article = Article::findOrFail($id);
+
+        $article->title = $request->get('title');
+        $article->subtitle = $request->get('subtitle');
+        $article->slug = Str::slug($article->title, '-');
+        $article->content = $request->get('content');
+
+        $article->save();
+
+        return redirect('/articles')->with('success', 'Article updated successfully');
     }
 
     /**
