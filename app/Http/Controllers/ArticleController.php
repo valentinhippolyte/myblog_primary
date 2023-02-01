@@ -122,6 +122,9 @@ class ArticleController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $article = Article::findOrFail($id);
+        $article->delete();
+
+        return redirect('/articles')->with('success', 'Article deleted successfully');
     }
 }

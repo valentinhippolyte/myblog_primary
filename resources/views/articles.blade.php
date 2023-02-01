@@ -22,6 +22,9 @@
                         <a href="{{ route('article-edit', $article->id) }}" class="btn btn-blue">Edit
                             <i class="fas fa-arrow-right"></i>
                         </a>
+                        <a href="{{ route('article-delete', $article->id) }}" class="btn btn-blue">Delete
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
                     </div>
                 </div>
             </div>
