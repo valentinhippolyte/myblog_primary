@@ -3,6 +3,7 @@
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ArticleController;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,11 +25,11 @@ Route::get('/users', [UserController::class, 'index'])->name('users');
 
 Route::get('/articles', [ArticleController::class, 'index'])->name('articles');
 Route::get('/articles/{slug}', [ArticleController::class, 'show'])->name('article');
-Route::get('/articles/admin/create', [ArticleController::class, 'create'])->name('article-create');
-Route::get('/articles/admin/create/store', [ArticleController::class, 'store'])->name('article-store');
-Route::get('/articles/admin/edit/{slug}', [ArticleController::class, 'edit'])->name('article-edit');
-Route::get('/articles/admin/updtate/{slug}', [ArticleController::class, 'update'])->name('article-update');
-Route::get('/articles/admin/delete/{slug}', [ArticleController::class, 'destroy'])->name('article-delete');
+Route::get('/articles/admin/create', [ArticleController::class, 'create'])->name('article-create')->middleware('auth');
+Route::get('/articles/admin/create/store', [ArticleController::class, 'store'])->name('article-store')->middleware('auth');
+Route::get('/articles/admin/edit/{slug}', [ArticleController::class, 'edit'])->name('article-edit')->middleware('auth');
+Route::get('/articles/admin/updtate/{slug}', [ArticleController::class, 'update'])->name('article-update')->middleware('auth');
+Route::get('/articles/admin/delete/{slug}', [ArticleController::class, 'destroy'])->name('article-delete')->middleware('auth');
 
 
 Auth::routes();

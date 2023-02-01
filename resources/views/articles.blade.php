@@ -19,12 +19,14 @@
                         <a href="{{ route('article', $article->slug) }}" class="btn btn-dark">Read more
                             <i class="fas fa-arrow-right"></i>
                         </a>
+                        @if(Auth::user())
                         <a href="{{ route('article-edit', $article->slug) }}" class="btn btn-blue">Edit
                             <i class="fas fa-arrow-right"></i>
                         </a>
                         <a href="{{ route('article-delete', $article->slug) }}" class="btn btn-blue">Delete
                             <i class="fas fa-arrow-right"></i>
                         </a>
+                        @endif
                     </div>
                 </div>
             </div>

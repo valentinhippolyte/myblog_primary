@@ -15,6 +15,26 @@
         <li class="nav-item">
           <a class="nav-link" href="{{ route('article-create') }}">Create article</a>
         </li>
+        @if(!Auth::user())
+          <li class="nav-item">
+            <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+          </li>
+        @endif
+         @if(Auth::user())
+          <a class="dropdown-item" href="{{ route('logout') }}"
+              onclick="event.preventDefault();
+              document.getElementById('logout-form').submit();">
+              {{ __('Logout') }}
+          </a>
+
+              <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                @csrf
+              </form>
+        @endif
+
       </ul>
     </div>
   </div>
