@@ -19,10 +19,10 @@
                         <a href="{{ route('article', $article->slug) }}" class="btn btn-dark">Read more
                             <i class="fas fa-arrow-right"></i>
                         </a>
-                        <a href="{{ route('article-edit', $article->id) }}" class="btn btn-blue">Edit
+                        <a href="{{ route('article-edit', $article->slug) }}" class="btn btn-blue">Edit
                             <i class="fas fa-arrow-right"></i>
                         </a>
-                        <a href="{{ route('article-delete', $article->id) }}" class="btn btn-blue">Delete
+                        <a href="{{ route('article-delete', $article->slug) }}" class="btn btn-blue">Delete
                             <i class="fas fa-arrow-right"></i>
                         </a>
                     </div>

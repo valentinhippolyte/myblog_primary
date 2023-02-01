@@ -25,7 +25,7 @@
       </div><br />
     @endif
 
-      <form action="{{ route('article-update', $article->id ) }}">
+      <form action="{{ route('article-update', $article->slug ) }}">
           <div class="form-group">
               @csrf
               @method('PATCH')
@@ -42,7 +42,7 @@
               <label for="content">Content :</label>
               <input type="text" class="form-control" name="content" value="{{ $article->content }}"/>
           </div>
-          <button type="submit" class="btn btn-primary">Modifier</button>
+          <button type="submit" class="btn btn-primary">Update</button>
       </form>
   </div>
 </div>

@@ -78,9 +78,9 @@ class ArticleController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($slug)
     {
-        $article = Article::findOrFail($id);
+        $article = Article::where('slug', $slug)->FirstOrFail();
 
         return view('edit', [
             'article' => $article
@@ -94,7 +94,7 @@ class ArticleController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $slug)
     {
         $request->validate([
             'title' => 'required|max:255',
@@ -102,7 +102,7 @@ class ArticleController extends Controller
             'content' => 'required',
         ]);
 
-        $article = Article::findOrFail($id);
+        $article = Article::where('slug', $slug)->FirstOrFail();
 
         $article->title = $request->get('title');
         $article->subtitle = $request->get('subtitle');
@@ -120,9 +120,9 @@ class ArticleController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($slug)
     {
-        $article = Article::findOrFail($id);
+        $article = Article::where('slug', $slug)->FirstOrFail();
         $article->delete();
 
         return redirect('/articles')->with('success', 'Article deleted successfully');

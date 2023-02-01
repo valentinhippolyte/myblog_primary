@@ -26,7 +26,7 @@ Route::get('/articles', [ArticleController::class, 'index'])->name('articles');
 Route::get('/articles/{slug}', [ArticleController::class, 'show'])->name('article');
 Route::get('/articles/admin/create', [ArticleController::class, 'create'])->name('article-create');
 Route::get('/articles/admin/create/store', [ArticleController::class, 'store'])->name('article-store');
-Route::get('/articles/admin/edit/{id}', [ArticleController::class, 'edit'])->name('article-edit');
-Route::get('/articles/admin/updtate/{id}', [ArticleController::class, 'update'])->name('article-update');
-Route::get('/articles/admin/delete/{id}', [ArticleController::class, 'destroy'])->name('article-delete');
+Route::get('/articles/admin/edit/{slug}', [ArticleController::class, 'edit'])->name('article-edit');
+Route::get('/articles/admin/updtate/{slug}', [ArticleController::class, 'update'])->name('article-update');
+Route::get('/articles/admin/delete/{slug}', [ArticleController::class, 'destroy'])->name('article-delete');
 
