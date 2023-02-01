@@ -30,3 +30,7 @@ Route::get('/articles/admin/edit/{slug}', [ArticleController::class, 'edit'])->n
 Route::get('/articles/admin/updtate/{slug}', [ArticleController::class, 'update'])->name('article-update');
 Route::get('/articles/admin/delete/{slug}', [ArticleController::class, 'destroy'])->name('article-delete');
 
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
