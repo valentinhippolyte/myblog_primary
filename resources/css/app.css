@@ -9,3 +9,11 @@ h5 {
 body{
     height: 100%;
 }
+img{
+    justify-content: center;
+}
+.section_welcome{
+
+    margin-top: 50vh;
+    transform: translateY(-50%);
+}

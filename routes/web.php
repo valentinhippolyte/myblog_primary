@@ -21,7 +21,7 @@ Route::get('/', function () {
 })->name('home');
 
 
-Route::get('/users', [UserController::class, 'index'])->name('users');
+Route::get('/users', [UserController::class, 'index'])->name('users')->middleware('auth');;
 
 Route::get('/articles', [ArticleController::class, 'index'])->name('articles');
 Route::get('/articles/{slug}', [ArticleController::class, 'show'])->name('article');

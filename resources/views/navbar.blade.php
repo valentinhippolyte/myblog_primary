@@ -6,9 +6,11 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav">
+        @if(Auth::user())
         <li class="nav-item">
           <a class="nav-link" href="{{ route('users') }}">Users</a>
         </li>
+        @endif
         <li class="nav-item">
           <a class="nav-link" href="{{ route('articles') }}">See articles</a>
         </li>

@@ -16,16 +16,10 @@
                     <div class="card-title">
                         <h5>{{ $article->title }}</h5>
                         <p class="card-text">{{ $article->subtitle }}</p>
-                        <a href="{{ route('article', $article->slug) }}" class="btn btn-dark">Read more
-                            <i class="fas fa-arrow-right"></i>
-                        </a>
+                        <a href="{{ route('article', $article->slug) }}"><button type="button" class="btn btn-dark"><i class="fas fa-eye"></i></button></a>
                         @if(Auth::user())
-                        <a href="{{ route('article-edit', $article->slug) }}" class="btn btn-blue">Edit
-                            <i class="fas fa-arrow-right"></i>
-                        </a>
-                        <a href="{{ route('article-delete', $article->slug) }}" class="btn btn-blue">Delete
-                            <i class="fas fa-arrow-right"></i>
-                        </a>
+                        <a href="{{ route('article-edit', $article->slug) }}"><button type="button" class="btn btn-primary"><i class="fas fa-pen"></i></button></a>
+                        <a href="{{ route('article-delete', $article->slug) }}"><button type="button" class="btn btn-danger"><i class="fas fa-trash"></i></button></a>
                         @endif
                     </div>
                 </div>

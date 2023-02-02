@@ -1,6 +1,6 @@
 @extends('base')
 @section('content')
-        <h1 class="display-3 text-center">User</h1>
+        <h1 class="display-3 text-center">Users</h1>
         <table class="table">
             <thead>
                 <tr>
