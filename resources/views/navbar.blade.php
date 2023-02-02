@@ -14,9 +14,11 @@
         <li class="nav-item">
           <a class="nav-link" href="{{ route('articles') }}">See articles</a>
         </li>
-        <li class="nav-item">
+        @if(Auth::user())
+                <li class="nav-item">
           <a class="nav-link" href="{{ route('article-create') }}">Create article</a>
         </li>
+        @endif
         @if(!Auth::user())
           <li class="nav-item">
             <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
@@ -24,17 +26,17 @@
           <li class="nav-item">
             <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
           </li>
-        @endif
-         @if(Auth::user())
+        @else
+         <li class="nav-item">
           <a class="dropdown-item" href="{{ route('logout') }}"
               onclick="event.preventDefault();
               document.getElementById('logout-form').submit();">
               {{ __('Logout') }}
           </a>
-
               <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                 @csrf
               </form>
+        </li>
         @endif
 
       </ul>

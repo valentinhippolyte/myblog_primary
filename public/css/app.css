@@ -13,7 +13,7 @@ img{
     justify-content: center;
 }
 .section_welcome{
-
+    text-align: center;
     margin-top: 50vh;
     transform: translateY(-50%);
 }
